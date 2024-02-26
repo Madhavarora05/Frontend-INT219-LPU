@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Image Slider</title>
+    <style>
+        .slider-container {
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: 100%;
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        #prevBtn {
+            left: 0;
+        }
+
+        #nextBtn {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+        <div class="slider">
+            <div class="slide"><img
+                    src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*"
+                    alt="Image 1"></div>
+            <div class="slide"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgbmG8Ebh27B3t5ChGhk7EWbZ6j2YRPX5IMA&usqp=CAU"
+                    alt="Image 2"></div>
+            <div class="slide"><img
+                    src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/07/top-20-small-dog-breeds.jpeg.jpg"
+                    alt="Image 3"></div>
+        </div>
+        <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.querySelectorAll('.slide');
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            slides[slideIndex].style.display = 'block';
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlides();
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            showSlides();
+        }
+        showSlides();
+    </script>
+</body>
+
+</html>
