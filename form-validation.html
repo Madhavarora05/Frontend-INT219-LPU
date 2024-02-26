@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Simple Form Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <span id="nameError" class="error"></span>
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+          var nameInput = document.getElementById("name").value;
+          var nameError = document.getElementById("nameError");
+          nameError.textContent = "";
+      
+          if (nameInput.trim() === "") {
+            nameError.textContent = "Name is required";
+            return false;
+          } else if (nameInput.trim().length < 3) {
+            nameError.textContent = "Name must be at least 3 characters";
+            return false;
+          } else if (!/^[A-Za-z]+$/.test(nameInput.trim())) {
+            nameError.textContent = "Name must contain only letters";
+            return false;
+          }
+      
+          return true;
+        }
+      </script>
+      
+</body>
+
+</html>
