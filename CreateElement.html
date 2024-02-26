@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="three">
+        <p>Hello</p>
+    </div>
+    <script>
+        //Method 1
+        const newPara = document.createElement('p');
+        var text1 = document.createTextNode("how are you?");
+        newPara.appendChild(text1); 
+        document.body.appendChild(newPara);
+
+        //Method 2
+        var parent = document.getElementById("three");
+        parent.innerHTML+='<p>New Content</p>';
+
+    </script>
+</body>
+</html>
