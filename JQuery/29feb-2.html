@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        p{
+            font-size: 5rem;
+            margin: 20px auto;
+        }
+        button{
+            width : 200px;
+            height: 100px;
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="P1">???????? ???????? ????????</p>
+    <p id="P2">@@@@@@</p>
+    <p id="P3">%%%%%%%</p>
+    <button id="b1">Text</button>
+    <button id="b2">HTML1</button>
+    <button id="b3">HTML2</button>
+
+    <script>
+        $("#b1").click(function(){
+            $("#P1").text("YOOOOO");
+        })
+        $("#b2").click(function(){
+            $("#P2").html("<i>India</i>");
+        })
+        var imageSrc = "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*";
+        $("#b3").click(function(){
+            $("#P3").html("<img src='" + imageSrc + "'alt='Image' height='150px'>");
+        })
+    </script>
+</body>
+</html>
