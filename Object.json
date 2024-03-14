@@ -1,0 +1,23 @@
+{
+    "name": "Madhav Arora",
+    "age": 19,
+    "email": "madhav@example.com",
+    "address": {
+      "city": "Jalandhar",
+      "state": "Punjab"
+    },
+    "hobbies": ["chess", "hiking", "cooking"],
+    "friends": [
+      {
+        "name": "Vedant",
+        "age": 20,
+        "email": "vedant@example.com"
+      },
+      {
+        "name": "Babal",
+        "age": 20,
+        "email": "babal@example.com"
+      }
+    ]
+  }
+  
